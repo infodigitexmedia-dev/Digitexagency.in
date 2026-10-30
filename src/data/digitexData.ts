@@ -1,0 +1,1541 @@
+import {
+  ServiceItem,
+  ProjectItem,
+  IndustryItem,
+  TestimonialItem,
+  TeamMember,
+  ContactConfig,
+  TechCategory,
+  FAQItem,
+  AboutConfig,
+  BlogPost,
+} from '../types';
+
+export const INITIAL_CONTACT_CONFIG: ContactConfig = {
+  email: 'info.digitex.media@gmail.com',
+  phone: '9034242154',
+  whatsappNumber: '+91 9034242154',
+  whatsappUrl: 'https://wa.me/919034242154',
+  calendarUrl: '',
+  address: 'DIGITEX Digital Solutions & Engineering Studio, India',
+  operatingHours: 'Monday – Saturday: 9:00 AM – 7:30 PM IST',
+};
+
+export const INITIAL_SERVICES: ServiceItem[] = [
+  // GROUP 1: DIGITAL EXPERIENCE
+  {
+    id: 'web-development',
+    slug: 'web-development',
+    aliases: ['web', 'website-development'],
+    group: 'Digital Experience',
+    title: 'Web Development',
+    category: 'Digital Platforms',
+    iconName: 'Globe',
+    shortDescription:
+      'Modern, high-performance web applications, corporate web portals, responsive single-page apps, and SEO-optimized digital experiences.',
+    fullDescription:
+      'Your web platform is the flagship of your digital presence. DIGITEX develops responsive, accessible, and fast web applications utilizing modern component frameworks. We pair disciplined front-end craft with resilient backend engineering, ensuring crisp typography, instantaneous interactions, and search engine dominance.',
+    image:
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    capabilities: [
+      'Next.js & React Full-Stack Web Applications',
+      'Enterprise Corporate Portals & Content Hubs',
+      'Interactive Dashboards & Real-Time Data Canvases',
+      'Core Web Vitals Optimization & High PageSpeed Scores',
+      'Progressive Web Apps (PWA) with Offline Caching',
+      'WCAG 2.1 AA Accessibility Standards Compliance',
+    ],
+    technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Vite', 'Node.js', 'Supabase'],
+    deliverables: [
+      'Responsive web application matching high-fidelity prototypes',
+      'Lighthouse performance scores consistently above 90',
+      'Configured CMS or dynamic management portal',
+      'Cross-browser and cross-device QA signoff report',
+    ],
+    process: [
+      { step: 1, title: 'Information Architecture & UX', description: 'Structuring user flows, navigation hierarchy, and responsive layout grids.' },
+      { step: 2, title: 'Component-Driven UI Engineering', description: 'Building accessible, reusable React components with clean design system tokens.' },
+      { step: 3, title: 'API Integration & Dynamic State', description: 'Connecting data endpoints, handling loading/error states, and local caching.' },
+      { step: 4, title: 'Performance Audit & Go-Live', description: 'Auditing image compression, bundle splitting, CDN headers, and domain DNS setup.' },
+    ],
+    benefits: [
+      'High search engine visibility through server-side rendering and structured JSON-LD',
+      'Flawless responsiveness across smartphone, tablet, laptop, and ultra-wide displays',
+      'Sub-second first contentful paint creating immediate user engagement',
+    ],
+    faqs: [
+      {
+        question: 'Will our team be able to update content easily?',
+        answer: 'Yes. We deliver custom CMS workflows or intuitive admin portals so non-technical staff can update copy, media, case studies, and services easily.',
+      },
+      {
+        question: 'What browsers and devices do you support?',
+        answer: 'We test across all major modern evergreen browsers (Chrome, Safari, Firefox, Edge) and standard iOS and Android screen resolutions.',
+      },
+    ],
+  },
+  {
+    id: 'ui-ux',
+    slug: 'ui-ux-design',
+    aliases: ['ui-ux', 'ui-ux-designing'],
+    group: 'Digital Experience',
+    title: 'UI / UX Design',
+    category: 'Product Design',
+    iconName: 'Palette',
+    shortDescription:
+      'Enterprise design systems, human-centered product interfaces, high-fidelity prototypes, conversion-driven wireframes, and usability validation.',
+    fullDescription:
+      'Exceptional software is not just functional; it is intuitive and satisfying to use. DIGITEX designs digital interfaces grounded in mathematical spacing scales, accessible typography, and cognitive ergonomics. We build scalable design systems in Figma that seamlessly bridge the gap between design vision and production-ready engineering.',
+    image:
+      'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1200&q=80',
+    capabilities: [
+      'Human-Centered User Research & Journey Mapping',
+      'Wireframing & Interactive High-Fidelity Prototyping',
+      'Enterprise Design Systems & Reusable Token Libraries',
+      'Conversion Rate Optimization (CRO) UX Heuristics',
+      'Micro-Interactions & Motion Design Architecture',
+      'WCAG AA Contrast & Accessibility Compliance',
+    ],
+    technologies: ['Figma', 'FigJam', 'Tokens Studio', 'Adobe CC', 'Lottie', 'Tailwind CSS'],
+    deliverables: [
+      'Complete Figma design file with interactive clickable prototypes',
+      'Design token repository (colors, typography scales, spacing, shadows)',
+      'Modular UI component library with responsive auto-layout variants',
+      'Detailed developer handoff documentation with asset exports',
+    ],
+    process: [
+      { step: 1, title: 'User Research & Journey Mapping', description: 'Uncovering pain points, information hierarchy needs, and core mental models.' },
+      { step: 2, title: 'Low-Fidelity Wireframing', description: 'Iterating rapidly on layouts and functional hierarchy without visual distraction.' },
+      { step: 3, title: 'High-Fidelity Visual Design', description: 'Applying authentic typography, micro-contrast, and brand identity tokens.' },
+      { step: 4, title: 'Developer Handoff & QA Review', description: 'Specifying exact spacing tokens, responsive constraints, and verifying implementation.' },
+    ],
+    benefits: [
+      'Reduces user onboarding friction and customer support ticket volume',
+      'Speeds up future feature engineering by up to 2.5x with modular design tokens',
+      'Gives your product the authority and polish of an industry leader',
+    ],
+    faqs: [
+      {
+        question: 'Do you deliver prototypes that we can test with real customers?',
+        answer: 'Yes. We deliver fully interactive Figma prototypes that simulate real clicks, form entries, page transitions, and drawer states for user testing.',
+      },
+      {
+        question: 'How do your designers collaborate with our developers?',
+        answer: 'We provide structured design tokens, responsive auto-layout specs, asset SVGs, and direct walkthrough sessions with your engineering team.',
+      },
+    ],
+  },
+  {
+    id: 'ecommerce',
+    slug: 'ecommerce-development',
+    aliases: ['ecommerce', 'ecommerce-solutions'],
+    group: 'Digital Experience',
+    title: 'E-Commerce Development',
+    category: 'Commerce Engineering',
+    iconName: 'ShoppingBag',
+    shortDescription:
+      'High-conversion omnichannel commerce architectures, custom headless store platforms, payment gateway orchestrations, and scalable inventory backends.',
+    fullDescription:
+      'DIGITEX builds mission-critical ecommerce solutions engineered for speed, conversion rate optimization, and seamless transaction security. From custom multi-vendor marketplaces and headless Shopify Plus storefronts to enterprise Magento and bespoke commerce engines, our implementations handle high concurrency, dynamic catalogs, and localized checkouts.',
+    image:
+      'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80',
+    capabilities: [
+      'Headless Commerce & Next.js Storefronts',
+      'Custom Multi-Vendor & B2B Portals',
+      'Payment Gateway Integration (Razorpay, Stripe, Cashfree)',
+      'Automated Order & Real-Time Inventory Sync',
+      'Cart Optimization & One-Click Checkout',
+      'High-Concurrency Flash Sale Architecture',
+    ],
+    technologies: ['Next.js', 'Shopify Plus', 'Node.js', 'GraphQL', 'Stripe', 'Redis', 'PostgreSQL'],
+    deliverables: [
+      'Production-ready scalable storefront',
+      'Integrated admin & merchant dashboard',
+      'Payment gateway compliance & automated receipts',
+      'Full SEO & Core Web Vitals optimization',
+    ],
+    process: [
+      { step: 1, title: 'Discovery & Catalog Modeling', description: 'Auditing product complexity, checkout friction, and third-party ERP/CRM integrations.' },
+      { step: 2, title: 'Architecture & UI/UX Design', description: 'Wireframing frictionless mobile-first purchasing flows and API schema.' },
+      { step: 3, title: 'Full-Stack Implementation', description: 'Developing resilient microservices, security compliance, and high-speed edge caching.' },
+      { step: 4, title: 'Stress Testing & Launch', description: 'End-to-end checkout validation, load testing, and zero-downtime deployment.' },
+    ],
+    benefits: [
+      'Sub-second page load speeds driving higher conversion rates',
+      'Zero transaction dropouts during sudden promotional traffic spikes',
+      'Full ownership of client data and customized shopping workflows',
+    ],
+    faqs: [
+      {
+        question: 'Can you migrate our existing store without losing SEO rankings or order history?',
+        answer: 'Yes. We maintain strict URL rewrite mappings, structured metadata, and perform automated database migration of customers, orders, and SKUs.',
+      },
+      {
+        question: 'Do you support international multi-currency and tax rules?',
+        answer: 'Absolutely. We configure automated geographic tax calculation, dynamic multi-currency display, and localized shipping integrations.',
+      },
+    ],
+  },
+
+  // GROUP 2: TECHNOLOGY
+  {
+    id: 'ai-development',
+    slug: 'ai-solutions',
+    aliases: ['ai-development', 'gen-ai'],
+    group: 'Technology',
+    title: 'AI Solutions',
+    category: 'Intelligent Systems',
+    iconName: 'Cpu',
+    shortDescription:
+      'Domain-adapted generative AI systems, private enterprise RAG pipelines, autonomous workflow agents, and custom LLM integrations.',
+    fullDescription:
+      'We empower businesses to operationalize Artificial Intelligence. Moving beyond generic chatbots, DIGITEX engineers production-grade AI applications tailored to your enterprise data. We build secure Retrieval Augmented Generation (RAG) knowledge systems, fine-tuned transformer models, intelligent document extraction pipelines, and autonomous workflow agents.',
+    image:
+      'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
+    capabilities: [
+      'Enterprise RAG & Private Knowledge Assistants',
+      'Custom LLM Fine-Tuning & Prompt Engineering',
+      'Automated Document Parsing & Semantic Search',
+      'Autonomous Workflow & CRM Automation Agents',
+      'Multi-Modal Vision & Audio Processing',
+      'Responsible AI Governance & Data Privacy Safeguards',
+    ],
+    technologies: ['Python', 'PyTorch', 'Gemini Models', 'LangChain', 'FastAPI', 'Pinecone', 'Qdrant'],
+    deliverables: [
+      'Validated AI model/pipeline with REST & WebSocket endpoints',
+      'Enterprise role-based security & audit logging',
+      'Interactive dashboard for monitoring inference metrics & cost',
+      'Comprehensive data processing scripts and evaluation benchmarks',
+    ],
+    process: [
+      { step: 1, title: 'Data Assessment & Feasibility', description: 'Evaluating enterprise proprietary data quality, privacy requirements, and objective benchmarks.' },
+      { step: 2, title: 'Pipeline Architecture & Prototype', description: 'Building embeddings, vector stores, prompt guardrails, and rapid proof-of-concept.' },
+      { step: 3, title: 'Production Engineering & Tuning', description: 'Implementing low-latency inference, caching layers, and continuous evaluation.' },
+      { step: 4, title: 'Deployment & Monitoring', description: 'Deploying with observability metrics for hallucination prevention and token efficiency.' },
+    ],
+    benefits: [
+      'Drastic reduction in manual document handling and customer query resolution times',
+      'Uncompromising data sovereignty—your confidential IP never trains public models',
+      'Measurable ROI with verifiable accuracy metrics before enterprise deployment',
+    ],
+    faqs: [
+      {
+        question: 'Will our proprietary company data be kept confidential?',
+        answer: 'Yes. We utilize isolated enterprise endpoints and private vector databases with encryption at rest and in transit. Your data is never exposed to public training pools.',
+      },
+      {
+        question: 'How do you prevent hallucinations in generative systems?',
+        answer: 'We employ strict retrieval guardrails, citation verification algorithms, confidence thresholds, and deterministic fallbacks.',
+      },
+    ],
+  },
+  {
+    id: 'machine-learning',
+    slug: 'machine-learning',
+    aliases: ['ml-engineering', 'predictive-ai'],
+    group: 'Technology',
+    title: 'Machine Learning',
+    category: 'Applied Intelligence',
+    iconName: 'Cpu',
+    shortDescription:
+      'Predictive analytics, computer vision inspection pipelines, automated classification, forecasting algorithms, and scalable MLOps architectures.',
+    fullDescription:
+      'DIGITEX designs and trains specialized machine learning models that turn historical company data into high-conviction forecasting engines. From automated visual defect detection in manufacturing to predictive customer churn models and algorithmic pricing engines, our models are built for low inference latency and continuous learning in production environments.',
+    image:
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+    capabilities: [
+      'Predictive Analytics & Churn Forecasting Models',
+      'Computer Vision & Automated Visual Defect Inspection',
+      'Natural Language Processing (NLP) & Sentiment Extraction',
+      'Recommendation Engines & Personalization Algorithms',
+      'Time-Series Forecasting & Demand Planning',
+      'MLOps Pipelines with Automated Continuous Re-Training',
+    ],
+    technologies: ['Python', 'PyTorch', 'Scikit-learn', 'TensorFlow', 'OpenCV', 'FastAPI', 'MLflow', 'Docker'],
+    deliverables: [
+      'Trained high-accuracy model weights & evaluation reports',
+      'Automated data ingestion and feature engineering pipelines',
+      'Production-ready microservices with sub-50ms inference latency',
+      'Drift monitoring dashboards tracking model accuracy over time',
+    ],
+    process: [
+      { step: 1, title: 'Data Cleaning & Feature Engineering', description: 'Auditing historical data distributions, handling outliers, and building robust feature stores.' },
+      { step: 2, title: 'Model Architecture & Training', description: 'Training benchmark models across multiple architectures to discover optimal precision/recall.' },
+      { step: 3, title: 'Hyperparameter Tuning & Validation', description: 'Cross-validating on out-of-sample data and optimizing inference memory footprint.' },
+      { step: 4, title: 'Production Deployment & MLOps', description: 'Packaging into containerized microservices with automated model drift alerts.' },
+    ],
+    benefits: [
+      'Anticipate customer behavior, equipment failures, and demand shifts before they happen',
+      'Automate visual inspection and manual data triage with superhuman consistency',
+      'Continuous self-improving algorithms that become more accurate with every transaction',
+    ],
+    faqs: [
+      {
+        question: 'What volume of data do we need to train a reliable machine learning model?',
+        answer: 'Depending on the problem type (tabular prediction, time-series, or computer vision), we can often achieve strong initial benchmarks with transfer learning and pre-trained backbones using a few thousand labeled examples.',
+      },
+      {
+        question: 'How do you monitor model performance after deployment?',
+        answer: 'We configure automated MLOps dashboards that track data drift, concept drift, and inference latency, triggering automated retraining alerts when needed.',
+      },
+    ],
+  },
+  {
+    id: 'software-development',
+    slug: 'custom-software',
+    aliases: ['software-development', 'custom-software-development'],
+    group: 'Technology',
+    title: 'Custom Software Development',
+    category: 'Enterprise Engineering',
+    iconName: 'Code',
+    shortDescription:
+      'Bespoke enterprise platforms, secure multi-tenant SaaS systems, legacy modernization, and high-performance distributed microservices.',
+    fullDescription:
+      'Off-the-shelf software often forces businesses into rigid constraints. DIGITEX designs and constructs custom software platforms architected specifically around your unique operating models. We specialize in robust business management systems, ERP extensions, SaaS backbones, and workflow automation platforms that scale without technical debt.',
+    image:
+      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
+    capabilities: [
+      'Multi-Tenant SaaS Architecture & Billing Systems',
+      'Enterprise Resource Planning (ERP) & CRM Systems',
+      'RESTful, GraphQL & gRPC API Microservices',
+      'Legacy System Modernization & Cloud Re-Platforming',
+      'Complex Database Schema Design & Sharding',
+      'Role-Based Access Control (RBAC) & Audit Trails',
+    ],
+    technologies: ['Node.js', 'Go', 'TypeScript', 'PostgreSQL', 'Docker', 'Kubernetes', 'Redis'],
+    deliverables: [
+      'Modular source code with 100% client intellectual property ownership',
+      'API documentation (OpenAPI / Swagger spec)',
+      'Automated CI/CD deployment pipelines',
+      'Disaster recovery plans and automated database backup routines',
+    ],
+    process: [
+      { step: 1, title: 'Business Process Modeling', description: 'Deep-dive interviews with stakeholders to map every data transaction and edge case.' },
+      { step: 2, title: 'System Architecture & Database Schema', description: 'Architecting normalization, indexing strategies, and modular service contracts.' },
+      { step: 3, title: 'Agile Sprint Implementation', description: 'Bi-weekly sprint releases with continuous code reviews and automated testing.' },
+      { step: 4, title: 'Enterprise Deployment & Handover', description: 'Production provisioning, load simulation, and thorough documentation handover.' },
+    ],
+    benefits: [
+      'Eliminates expensive per-seat software licensing fees',
+      'Matches your exact company workflows without compromises',
+      'High security standards designed to pass enterprise vendor security audits',
+    ],
+    faqs: [
+      {
+        question: 'Who owns the intellectual property and source code?',
+        answer: 'You retain 100% exclusive ownership of all code, assets, database schemas, and documentation upon project milestone completion.',
+      },
+      {
+        question: 'How do you handle maintenance after deployment?',
+        answer: 'We provide structured SLA maintenance tiers covering security patches, dependency updates, uptime monitoring, and continuous enhancement sprints.',
+      },
+    ],
+  },
+  {
+    id: 'mobile-app-development',
+    slug: 'mobile-app-development',
+    aliases: ['mobile-apps', 'app-development'],
+    group: 'Technology',
+    title: 'Mobile App Development',
+    category: 'Native & Cross-Platform',
+    iconName: 'Smartphone',
+    shortDescription:
+      'High-performance iOS and Android mobile applications built with React Native and Flutter, featuring offline capability and smooth 60fps animations.',
+    fullDescription:
+      'We craft mobile experiences that users love to keep on their home screens. DIGITEX develops native-feel cross-platform mobile apps for iOS and Android using React Native and Flutter. From consumer marketplace apps to enterprise field-service tools with offline sync, our apps provide biometric authentication, instant push notifications, and rock-solid stability.',
+    image:
+      'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80',
+    capabilities: [
+      'Cross-Platform iOS & Android Engineering (React Native / Flutter)',
+      'Offline-First Local SQLite & Secure Key Storage',
+      'Push Notifications & Deep Linking Architecture',
+      'Biometric Authentication (FaceID & Fingerprint)',
+      'Hardware Sensors & Geolocation Background Tracking',
+      'App Store (iOS) & Google Play Store Submission Management',
+    ],
+    technologies: ['React Native', 'Flutter', 'TypeScript', 'Firebase', 'Redux Toolkit', 'Fastlane'],
+    deliverables: [
+      'Signed production APK / AAB and IPA binaries',
+      'Full compliance with Apple App Store and Google Play guidelines',
+      'Integrated crash reporting (Crashlytics) and performance monitoring',
+      'Native backend API endpoints with authenticated session handling',
+    ],
+    process: [
+      { step: 1, title: 'Mobile UX & Device Optimization', description: 'Designing thumb-zone friendly navigation, gestures, and tactile feedback.' },
+      { step: 2, title: 'Client Architecture & State Machine', description: 'Structuring offline cache synchronization and optimistic UI updates.' },
+      { step: 3, title: 'Hardware Integration & Testing', description: 'Testing camera, GPS, Bluetooth, and biometric sensors across physical devices.' },
+      { step: 4, title: 'Store Certification & Publishing', description: 'Navigating Apple and Google review cycles to achieve guaranteed store approval.' },
+    ],
+    benefits: [
+      'Single unified codebase saves up to 40% in development and ongoing maintenance costs',
+      'Smooth 60fps transitions and zero lag during intensive scrolling lists',
+      'Complete handling of store review guidelines and regulatory privacy policies',
+    ],
+    faqs: [
+      {
+        question: 'Do you help with publishing the app to the App Store and Google Play?',
+        answer: 'Yes. We manage the entire store release process including developer account setup, privacy declarations, screenshots, app descriptions, and resolving any review inquiries.',
+      },
+      {
+        question: 'How do you handle updates once the app is already published?',
+        answer: 'We configure Over-The-Air (OTA) update pipelines for rapid JavaScript patches, alongside standard versioned store release pipelines.',
+      },
+    ],
+  },
+
+  // GROUP 3: GROWTH
+  {
+    id: 'digital-marketing',
+    slug: 'digital-marketing',
+    aliases: ['marketing', 'performance-marketing'],
+    group: 'Growth',
+    title: 'Digital Marketing',
+    category: 'Growth & Acquisition',
+    iconName: 'TrendingUp',
+    shortDescription:
+      'Data-driven performance marketing, high-ROAS paid media campaigns, Google Ads precision, conversion rate optimization, and brand positioning.',
+    fullDescription:
+      'At DIGITEX, marketing is treated as a rigorous engineering discipline. We build full-funnel acquisition systems that lower customer acquisition costs (CAC) and accelerate customer lifetime value (LTV). Our campaigns combine technical search visibility, paid search precision, creative ad strategies, and analytical attribution.',
+    image:
+      'https://images.unsplash.com/photo-1533750516457-a7f992034fec?auto=format&fit=crop&w=1200&q=80',
+    capabilities: [
+      'Google Search, Display & Performance Max Campaigns',
+      'Social Media Advertising (Meta, LinkedIn, YouTube)',
+      'Conversion Rate Optimization (CRO) & Funnel Audits',
+      'Marketing Analytics, Attribution & GA4 Custom Events',
+      'B2B Account-Based Marketing (ABM) Playbooks',
+      'Creative Ad Copy & High-Converting Landing Page Design',
+    ],
+    technologies: ['Google Ads', 'Meta Ads Manager', 'Google Analytics 4', 'Google Tag Manager', 'Looker Studio'],
+    deliverables: [
+      'Custom campaign structure with negative keyword lists',
+      'Conversion-optimized landing pages and ad copy variants',
+      'Automated real-time reporting dashboard with transparent ROAS',
+      'Bi-weekly strategic review and budget allocation recommendations',
+    ],
+    process: [
+      { step: 1, title: 'Competitive & Keyword Intelligence', description: 'Mapping search intent, competitor ad spends, and high-intent customer keywords.' },
+      { step: 2, title: 'Tracking Infrastructure & Landing Pages', description: 'Configuring server-side tagging, event triggers, and high-converting landing pages.' },
+      { step: 3, title: 'Campaign Execution & Bid Strategy', description: 'Deploying structured campaigns with algorithmic bid strategies and ad split-tests.' },
+      { step: 4, title: 'Iterative Attribution & Scaling', description: 'Killing underperforming ad sets and scaling high-ROAS creative variants.' },
+    ],
+    benefits: [
+      'Direct attribution of every ad rupee or dollar spent to qualified pipeline leads',
+      'Lower cost-per-acquisition through continuous algorithmic A/B testing',
+      'Transparent reporting with zero hidden markups or vanity metrics',
+    ],
+    faqs: [
+      {
+        question: 'How quickly can we expect to see results from marketing campaigns?',
+        answer: 'Paid search and targeted performance campaigns generate qualified enquiries within the first 7 to 14 days, with continuous compounding optimization.',
+      },
+      {
+        question: 'Do we own our advertising accounts and historical data?',
+        answer: 'Always. All campaigns run inside your own Google Ads and Meta ad accounts. You retain permanent ownership of all pixels, audiences, and campaign history.',
+      },
+    ],
+  },
+  {
+    id: 'seo-digital-growth',
+    slug: 'seo-digital-growth',
+    aliases: ['digital-growth', 'seo', 'seo-growth'],
+    group: 'Growth',
+    title: 'SEO / Digital Growth',
+    category: 'Search & Authority',
+    iconName: 'TrendingUp',
+    shortDescription:
+      'Technical search engine optimization, semantic Schema.org architecture, Core Web Vitals optimization, and high-authority search rankings.',
+    fullDescription:
+      'Dominating search rankings requires technical excellence and authoritative content structure. DIGITEX executes comprehensive SEO programs that optimize your technical web architecture, speed parameters, and search intent alignment. We turn organic search into your most predictable, compounding customer acquisition channel.',
+    image:
+      'https://images.unsplash.com/photo-1571721795195-a2ca2d3370a9?auto=format&fit=crop&w=1200&q=80',
+    capabilities: [
+      'Technical On-Page & Schema.org JSON-LD Architecture',
+      'Core Web Vitals & Sub-Second PageSpeed Audits',
+      'High-Intent Keyword Research & Topic Clustering',
+      'Search Engine Crawl Budget & Indexation Optimization',
+      'Local & Enterprise Multi-Location SEO Dominance',
+      'Competitor Search Gap & Content Opportunity Analysis',
+    ],
+    technologies: ['Google Search Console', 'Semrush', 'Ahrefs', 'Screaming Frog', 'Google Analytics 4', 'Schema.org'],
+    deliverables: [
+      'Comprehensive technical crawl and indexation audit',
+      'Semantic Schema.org structured data deployment',
+      'Live keyword position and organic traffic dashboard',
+      'Monthly actionable organic search growth strategy roadmap',
+    ],
+    process: [
+      { step: 1, title: 'Technical Crawl & Speed Audit', description: 'Diagnosing rendering bottlenecks, 404 chains, indexing errors, and canonical conflicts.' },
+      { step: 2, title: 'Keyword Intent Mapping', description: 'Clustering target keywords by commercial search intent and transactional landing pages.' },
+      { step: 3, title: 'On-Page & Schema Deployment', description: 'Implementing structured JSON-LD data, semantic HTML hierarchies, and meta optimizations.' },
+      { step: 4, title: 'Authority Building & Rank Tracking', description: 'Building contextual industry authority and tracking weekly keyword rank improvements.' },
+    ],
+    benefits: [
+      'Sustainable inbound traffic pipeline that compounds in value month-over-month',
+      'Drastically reduced dependency on expensive cost-per-click paid advertising',
+      'High search prominence and immediate credibility when prospective clients search your services',
+    ],
+    faqs: [
+      {
+        question: 'How long does it take for SEO optimizations to reflect in Google rankings?',
+        answer: 'Technical fixes and Core Web Vitals updates typically show initial indexing improvements within 2 to 4 weeks, while organic rankings build substantial authority over 3 to 6 months.',
+      },
+      {
+        question: 'Do you guarantee number 1 rankings on Google?',
+        answer: 'No honest agency can guarantee #1 rankings due to algorithmic dynamics, but we systematically optimize every technical, on-page, and authority factor to achieve dominant first-page visibility.',
+      },
+    ],
+  },
+  {
+    id: 'dedicated-hiring',
+    slug: 'dedicated-hiring',
+    aliases: ['staff-augmentation'],
+    group: 'Growth',
+    title: 'Dedicated Hiring',
+    category: 'Staff Augmentation',
+    iconName: 'Users',
+    shortDescription:
+      'Vetted senior software engineers, UI/UX designers, and technical project managers dedicated exclusively to your company on full-time monthly retainers.',
+    fullDescription:
+      'Scale your internal engineering capacity without the high overhead, lengthy recruitment cycles, or legal complexities of traditional hiring. DIGITEX provides dedicated, pre-vetted senior software engineers, frontend specialists, mobile developers, and QA leads who integrate directly into your sprint cadences and Slack channels.',
+    image:
+      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
+    capabilities: [
+      'Full-Time Dedicated Senior Software Engineers',
+      'Seamless Time-Zone Overlap & Direct Slack Integration',
+      'Flexible Monthly Retainer Models with No Lock-in',
+      'Pre-Screened Technical Rigor & Clean Code Standards',
+      'Dedicated Technical Project Lead & Daily Standups',
+      'Instant Scale-Up or Scale-Down Based on Roadmap',
+    ],
+    technologies: ['React', 'Next.js', 'Node.js', 'Python', 'Go', 'Flutter', 'AWS', 'Docker'],
+    deliverables: [
+      'Dedicated engineers working 160+ hours per month solely on your project',
+      'Direct participation in your daily standups, Jira tickets, and GitHub PRs',
+      'Weekly engineering velocity reports and code quality metrics',
+      'Guaranteed replacement within 5 business days if requirements shift',
+    ],
+    process: [
+      { step: 1, title: 'Requirements & Skill Profiling', description: 'Pinpointing tech stack nuances, seniority requirements, and sprint working hours.' },
+      { step: 2, title: 'Candidate Shortlisting & Interviews', description: 'Reviewing vetted developer profiles and conducting direct technical interviews.' },
+      { step: 3, title: 'Sprint Onboarding & Tool Setup', description: 'Integrating into your Git repos, communication channels, and coding standards.' },
+      { step: 4, title: 'Continuous Delivery & Account Oversight', description: 'Regular milestone evaluations and proactive account lead check-ins.' },
+    ],
+    benefits: [
+      'Onboard productive senior talent in under 7 days versus 60+ days for local hiring',
+      'Zero HR overhead, employment taxes, hardware procurement, or benefits administration',
+      'Direct control over your developers daily priorities and deliverables',
+    ],
+    faqs: [
+      {
+        question: 'Can we interview the engineers before making a hiring decision?',
+        answer: 'Yes, 100%. You conduct technical screening and code reviews with the shortlisted candidates before committing to any engagement.',
+      },
+      {
+        question: 'What happens if our project scope changes or we need different skills?',
+        answer: 'We offer flexible month-to-month contracts. You can easily switch technologies or adjust team size with standard notice.',
+      },
+    ],
+  },
+
+  // GROUP 4: QUALITY
+  {
+    id: 'testing-qa',
+    slug: 'testing-qa',
+    aliases: ['qa-testing', 'quality-assurance'],
+    group: 'Quality',
+    title: 'Testing & QA',
+    category: 'Quality Engineering',
+    iconName: 'ShieldCheck',
+    shortDescription:
+      'Automated end-to-end testing suites, security audits, performance benchmarking, cross-browser verification, and manual exploratory testing.',
+    fullDescription:
+      'Software defects harm brand reputation and cost revenue. DIGITEX embeds rigorous Quality Assurance into every stage of the software lifecycle. We design automated regression suites, simulate high-concurrency peak traffic loads, conduct vulnerability scans, and execute thorough cross-device exploratory testing so your software performs flawlessly in production.',
+    image:
+      'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80',
+    capabilities: [
+      'Automated End-to-End Testing (Playwright & Cypress)',
+      'API Contract & Performance Load Testing (k6 / JMeter)',
+      'Security Vulnerability & OWASP Top 10 Audits',
+      'Cross-Device & Cross-Browser Regression Testing',
+      'CI/CD Pipeline Integration & Quality Gates',
+      'Accessibility (WCAG 2.1) & Performance Auditing',
+    ],
+    technologies: ['Playwright', 'Cypress', 'k6', 'Jest', 'Postman', 'SonarQube', 'GitHub Actions'],
+    deliverables: [
+      'Comprehensive test strategy document and test case repository',
+      'Automated test scripts runnable in CI/CD pipeline',
+      'Detailed defect triage report with reproduction steps and severity rankings',
+      'Performance benchmark report under simulated peak stress loads',
+    ],
+    process: [
+      { step: 1, title: 'Test Strategy & Risk Assessment', description: 'Identifying critical user journeys, revenue-impacting workflows, and edge vulnerabilities.' },
+      { step: 2, title: 'Automated Suite Development', description: 'Writing maintainable test scripts with mock data factories and parallel execution.' },
+      { step: 3, title: 'Stress, Security & Regression Runs', description: 'Executing load tests, security scans, and cross-platform matrix testing.' },
+      { step: 4, title: 'Quality Gate & Release Signoff', description: 'Enforcing zero blocker/critical bugs threshold before production signoff.' },
+    ],
+    benefits: [
+      'Prevents costly production outages and catastrophic data corruption incidents',
+      'Accelerates developer release velocity with reliable automated CI/CD checks',
+      'Guarantees rock-solid user experience across different screen sizes and operating systems',
+    ],
+    faqs: [
+      {
+        question: 'Can you audit and write test suites for our existing legacy codebase?',
+        answer: 'Yes. We frequently conduct independent code quality and security audits on existing software and deliver plug-and-play Playwright/Cypress suites.',
+      },
+      {
+        question: 'How do you test for sudden traffic surges?',
+        answer: 'We utilize distributed load testing engines (k6/JMeter) to simulate thousands of simultaneous virtual users hitting your checkout and API endpoints.',
+      },
+    ],
+  },
+];
+
+export const INITIAL_PROJECTS: ProjectItem[] = [
+  {
+    id: 'apex-logistics',
+    slug: 'apex-global-logistics-platform',
+    title: 'Apex Global Freight & Fleet Telematics',
+    client: 'Apex Global Logistics',
+    category: 'Enterprise Software',
+    industry: 'Transportation & Logistics',
+    tagline: 'Real-time telemetry and dispatch automation for 1,200+ commercial vehicles.',
+    overview:
+      'Apex Global Logistics required an enterprise management platform to replace disparate spreadsheet tools and legacy dispatch systems. DIGITEX architected a unified telematics hub that unifies GPS telemetry, driver route optimization, automated customer proof-of-delivery, and billing.',
+    challenge:
+      'Dispatchers were operating with 15-minute GPS delays and manual paperwork, leading to route inefficiencies, fuel waste, and frequent customer delivery disputes.',
+    solution:
+      'Engineered a microservices platform with real-time WebSocket vehicle tracking, an automated driver mobile application with offline signature capture, and an instant ETA prediction engine.',
+    results: [
+      '31% reduction in average dispatch processing time',
+      '18% drop in overall fleet fuel consumption via route optimization',
+      '100% paperless billing with automated digital proof of delivery',
+    ],
+    servicesProvided: ['Custom Software Development', 'Mobile App Development', 'Cloud Infrastructure'],
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'Docker', 'Google Maps Platform'],
+    coverImage:
+      'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80',
+    ],
+    year: '2025',
+    featured: true,
+  },
+  {
+    id: 'lumina-retail',
+    slug: 'lumina-luxury-retail-ecommerce',
+    title: 'Lumina Omnichannel Luxury Storefront',
+    client: 'Lumina Home & Living',
+    category: 'Ecommerce Solutions',
+    industry: 'Retail & Ecommerce',
+    tagline: 'High-speed headless commerce platform achieving 98 Mobile Lighthouse score.',
+    overview:
+      'Lumina, a fast-growing luxury home goods brand, was held back by a sluggish monolithic store that suffered during major flash sales. DIGITEX rebuilt the experience as a modern headless storefront with instant search and sub-second page transitions.',
+    challenge:
+      'High mobile bounce rate (over 68%) due to 5.2-second page load times and fragmented checkout steps causing significant cart abandonment.',
+    solution:
+      'Constructed a headless Next.js frontend integrated with an optimized backend, Algolia instant search, custom 3D product previewers, and a streamlined single-step checkout.',
+    results: [
+      'Sub-second (0.7s) Largest Contentful Paint on mobile 4G networks',
+      '44% increase in overall mobile checkout conversion rate',
+      'Zero downtime during Black Friday peak sales with 15,000 concurrent shoppers',
+    ],
+    servicesProvided: ['Ecommerce Solutions', 'UI/UX Design', 'Web Development'],
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Shopify Plus', 'Stripe', 'Algolia'],
+    coverImage:
+      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80',
+    ],
+    year: '2025',
+    featured: true,
+  },
+  {
+    id: 'pulse-health',
+    slug: 'pulsehealth-clinical-telemedicine',
+    title: 'PulseHealth Clinical & Telehealth Portal',
+    client: 'PulseHealth Medical Network',
+    category: 'Custom Software Development',
+    industry: 'Healthcare',
+    tagline: 'HIPAA-compliant telemedicine, patient records, and encrypted video consultations.',
+    overview:
+      'A regional network of multi-specialty clinics required a secure patient consultation and medical records management portal. DIGITEX delivered a compliant telehealth platform featuring WebRTC encrypted video and real-time electronic prescriptions.',
+    challenge:
+      'Patients faced friction booking specialist appointments, and doctors struggled with clunky on-premise electronic health record (EHR) software.',
+    solution:
+      'Built a cloud-native platform featuring end-to-end encrypted video consultations, role-based clinic access, automated SMS appointment reminders, and digital prescription generation.',
+    results: [
+      'Over 25,000 remote patient consultations conducted in the first 6 months',
+      '40% reduction in patient appointment no-shows via automated reminders',
+      '100% compliance with healthcare privacy and patient data encryption regulations',
+    ],
+    servicesProvided: ['Custom Software Development', 'Testing & QA', 'UI/UX Design'],
+    technologies: ['React', 'WebRTC', 'Node.js', 'PostgreSQL', 'AWS KMS', 'Twilio'],
+    coverImage:
+      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80',
+    ],
+    year: '2024',
+    featured: true,
+  },
+  {
+    id: 'urbannest-prop',
+    slug: 'urbannest-smart-property-marketplace',
+    title: 'UrbanNest Real Estate & Property Discovery',
+    client: 'UrbanNest Realty',
+    category: 'Web Development',
+    industry: 'Rentals & Utilities',
+    tagline: 'Interactive property portal with map exploration and automated tenant lead routing.',
+    overview:
+      'UrbanNest manages luxury commercial and residential rentals across tier-1 cities. DIGITEX crafted a property discovery platform with interactive geospatial search, 360 virtual tours, and automated WhatsApp lead distribution for leasing agents.',
+    challenge:
+      'Slow property search filtering and poor lead handoff to leasing agents resulted in lost prospective tenants to competitors.',
+    solution:
+      'Developed a responsive React web portal featuring lightning-fast spatial geo-queries, instant WhatsApp inquiry dispatch to neighborhood agents, and verified tenant document upload.',
+    results: [
+      '2.8x increase in qualified property tour bookings in the first quarter',
+      'Average inquiry-to-agent contact response time reduced from 4 hours to under 3 minutes',
+      'Significant increase in organic Google search rankings for high-value rental terms',
+    ],
+    servicesProvided: ['Web Development', 'Digital Marketing', 'UI/UX Design'],
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Mapbox GL', 'Node.js', 'WhatsApp Business API'],
+    coverImage:
+      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
+    ],
+    year: '2024',
+    featured: true,
+  },
+  {
+    id: 'finedge-analytics',
+    slug: 'finedge-high-volume-analytics-engine',
+    title: 'FinEdge Real-Time Financial Analytics',
+    client: 'FinEdge Capital Markets',
+    category: 'AI / ML / Gen AI',
+    industry: 'Financial Services',
+    tagline: 'Sub-second market telemetry, anomaly detection, and automated portfolio rebalancing.',
+    overview:
+      'FinEdge needed an intelligent analytics dashboard to aggregate tick-by-tick financial market feeds, run anomaly detection algorithms, and deliver real-time risk alerts to asset managers.',
+    challenge:
+      'Legacy relational databases could not ingest over 50,000 tick updates per second without severe interface lag and thread lockup.',
+    solution:
+      'Engineered a distributed time-series architecture backed by ClickHouse, Redis, and high-frequency WebSockets feeding an ultra-smooth React canvas data visualizer.',
+    results: [
+      'Zero UI frame drops while rendering live charts with 100,000+ data points',
+      'Automated risk alerts dispatched in less than 50 milliseconds',
+      'Empowered portfolio managers to execute informed decisions ahead of market shifts',
+    ],
+    servicesProvided: ['AI / ML / Gen AI', 'Custom Software Development', 'Testing & QA'],
+    technologies: ['TypeScript', 'Python', 'FastAPI', 'ClickHouse', 'Redis', 'D3.js', 'WebSockets'],
+    coverImage:
+      'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1642543492481-44e81e3914a7?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=80',
+    ],
+    year: '2024',
+    featured: false,
+  },
+  {
+    id: 'nexastream-ott',
+    slug: 'nexastream-ott-entertainment-app',
+    title: 'NexaStream Multi-Screen Media Streaming',
+    client: 'NexaStream Entertainment',
+    category: 'Mobile App Development',
+    industry: 'Entertainment',
+    tagline: 'Cross-platform mobile and tablet streaming with dynamic adaptive bitrate playback.',
+    overview:
+      'An emerging regional entertainment studio required high-performance iOS and Android mobile streaming apps with offline download encryption and personalized content recommendation.',
+    challenge:
+      'Variable network conditions caused frequent video buffering, and device fragmentation led to inconsistent playback on low-end smartphones.',
+    solution:
+      'Developed native-level Flutter mobile applications featuring hardware-accelerated video rendering, dynamic HLS stream bitrate switching, and DRM-protected offline media storage.',
+    results: [
+      '4.8-star average rating across Google Play and Apple App Store',
+      '62% decrease in video start buffering time on 3G and 4G connections',
+      'Over 200,000 active monthly mobile stream subscribers',
+    ],
+    servicesProvided: ['Mobile App Development', 'UI/UX Design', 'Testing & QA'],
+    technologies: ['Flutter', 'Dart', 'ExoPlayer', 'AVPlayer', 'AWS CloudFront', 'Firebase'],
+    coverImage:
+      'https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&w=1200&q=80',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=80',
+    ],
+    year: '2024',
+    featured: false,
+  },
+];
+
+export const INITIAL_INDUSTRIES: IndustryItem[] = [
+  {
+    id: 'healthcare',
+    slug: 'healthcare',
+    title: 'Healthcare & Life Sciences',
+    shortDescription:
+      'HIPAA-ready clinical systems, telemedicine platforms, patient scheduling portals, and laboratory management software.',
+    fullDescription:
+      'In healthcare, software accuracy and regulatory compliance are paramount. DIGITEX engineers secure, interoperable health technology solutions that simplify clinical workflows, protect patient privacy, and enable seamless remote care.',
+    image:
+      'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80',
+    iconName: 'Activity',
+    keyChallenges: [
+      'Strict regulatory compliance and encryption of protected health information (PHI)',
+      'Legacy on-premise hospital systems unable to integrate with modern web or mobile clients',
+      'Patient scheduling friction resulting in empty clinical slots and revenue loss',
+    ],
+    solutionsProvided: [
+      'Compliant cloud architectures with zero-knowledge encryption',
+      'WebRTC video consultation rooms with automated prescription workflows',
+      'FHIR and HL7 interoperability adapters for hospital database integration',
+    ],
+    featuredCapabilities: ['Telehealth Apps', 'Doctor Rostering', 'EHR Interoperability', 'Medical Device Telemetry'],
+  },
+  {
+    id: 'construction',
+    slug: 'construction',
+    title: 'Construction & Real Estate',
+    shortDescription:
+      'Job-site field management tools, equipment tracking, contractor dispatch, and property leasing portals.',
+    fullDescription:
+      'We empower construction and infrastructure firms to modernize job-site coordination. From automated contractor logs and mobile blueprint markup tools to equipment asset tracking, DIGITEX bridges field operations with corporate headquarters.',
+    image:
+      'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80',
+    iconName: 'Hammer',
+    keyChallenges: [
+      'Unreliable cellular connectivity on remote construction sites causing data sync failures',
+      'Delayed project milestone reporting leading to costly budget overruns',
+      'Disorganized contractor work orders and material delivery disputes',
+    ],
+    solutionsProvided: [
+      'Offline-first mobile applications with automatic background synchronization upon network reconnection',
+      'Real-time job-site photographic inspection and signoff workflows',
+      'Equipment IoT telematics tracking run-hours and maintenance cycles',
+    ],
+    featuredCapabilities: ['Field Inspection Apps', 'Equipment Tracking', 'Contractor Portals', 'Subcontractor Billing'],
+  },
+  {
+    id: 'retail',
+    slug: 'retail',
+    title: 'Retail & Ecommerce',
+    shortDescription:
+      'Omnichannel commerce platforms, POS sync, personalized customer recommendations, and high-volume checkout.',
+    fullDescription:
+      'Modern retail demands seamless integration between digital storefronts and physical retail spaces. DIGITEX designs high-speed ecommerce architectures that deliver unified customer profiles, inventory transparency, and zero checkout friction.',
+    image:
+      'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=1000&q=80',
+    iconName: 'ShoppingBag',
+    keyChallenges: [
+      'High mobile bounce rates and abandoned shopping carts on slow web stores',
+      'Inventory desynchronization across brick-and-mortar stores and online channels',
+      'Severe performance degradation during high-traffic promotional flash sales',
+    ],
+    solutionsProvided: [
+      'Headless Next.js storefronts with sub-second page rendering and instant search',
+      'Centralized real-time inventory ledger syncing online sales with in-store POS',
+      'Automated abandoned cart recovery workflows via WhatsApp and email',
+    ],
+    featuredCapabilities: ['Headless Storefronts', 'Unified POS Sync', 'Cart Recovery', 'Flash Sale Architectures'],
+  },
+  {
+    id: 'education',
+    slug: 'education',
+    title: 'Education & EdTech',
+    shortDescription:
+      'Interactive learning management systems (LMS), student portals, live classroom video, and automated assessment scoring.',
+    fullDescription:
+      'DIGITEX builds engaging digital learning environments for educational institutions, corporate academies, and EdTech startups. We combine accessible user interfaces with automated grading, student progress analytics, and secure video streaming.',
+    image:
+      'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=80',
+    iconName: 'GraduationCap',
+    keyChallenges: [
+      'Low student completion rates and disengagement in passive video learning systems',
+      'High server costs for video bandwidth and simultaneous live interactive streams',
+      'Complex student grading and certificate verification overhead',
+    ],
+    solutionsProvided: [
+      'Interactive micro-learning modules with gamified milestone progression',
+      'Optimized adaptive bitrate video streaming with global CDN distribution',
+      'Automated quiz evaluations and tamper-proof digital credential issuance',
+    ],
+    featuredCapabilities: ['Custom LMS Platforms', 'Live Interactive Video', 'Student Dashboards', 'Automated Grading'],
+  },
+  {
+    id: 'travel',
+    slug: 'travel',
+    title: 'Travel & Hospitality',
+    shortDescription:
+      'Direct booking engines, channel manager integrations, guest mobile concierge apps, and tour itinerary builders.',
+    fullDescription:
+      'Empowering boutique hotel groups, resort chains, and tour operators to drive direct bookings and eliminate high third-party OTA commission fees. Our hospitality software provides real-time room availability, frictionless payment, and digital guest concierges.',
+    image:
+      'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1000&q=80',
+    iconName: 'Compass',
+    keyChallenges: [
+      'Excessive reliance on OTAs with 15% to 25% commission deductions on every booking',
+      'Double-booking risks due to slow two-way channel synchronization',
+      'Friction in the mobile reservation flow leading to lost travelers',
+    ],
+    solutionsProvided: [
+      'High-converting direct booking engine integrated with payment gateways',
+      'Real-time two-way iCal / API channel manager synchronizing inventory across Booking.com and Airbnb',
+      'Mobile-first digital key and guest service request dashboard',
+    ],
+    featuredCapabilities: ['Direct Booking Engines', 'Channel Sync', 'Mobile Guest Concierge', 'Dynamic Pricing Rules'],
+  },
+  {
+    id: 'manufacturing',
+    slug: 'manufacturing',
+    title: 'Manufacturing & Industrial',
+    shortDescription:
+      'Shop-floor operational tracking, bill-of-materials (BOM) management, quality assurance logs, and supplier portals.',
+    fullDescription:
+      'We bring software intelligence to industrial production floors. DIGITEX designs custom manufacturing execution systems (MES) that track raw materials, monitor assembly line velocity, reduce defect rates, and automate supplier reorders.',
+    image:
+      'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80',
+    iconName: 'Factory',
+    keyChallenges: [
+      'Opaque production floor bottlenecks due to delayed paper-based shift logs',
+      'Unplanned machine downtime causing costly supply chain delays',
+      'Inaccurate material requirement planning resulting in inventory shortages',
+    ],
+    solutionsProvided: [
+      'Tablet-based operator terminals capturing real-time cycle times and scrap rates',
+      'Predictive maintenance alert dashboards based on machine sensor metrics',
+      'Automated supplier procurement triggers tied to real-time stock consumption',
+    ],
+    featuredCapabilities: ['Shop-Floor MES', 'Supply Chain Portals', 'Scrap Reduction Logs', 'Predictive Maintenance'],
+  },
+  {
+    id: 'entertainment',
+    slug: 'entertainment',
+    title: 'Entertainment & Media',
+    shortDescription:
+      'Video-on-demand streaming platforms, ticketing systems, digital rights management, and fan engagement apps.',
+    fullDescription:
+      'The modern audience expects instantaneous media playback across every device. DIGITEX engineers scalable content streaming platforms, live event ticketing systems, and interactive community spaces that handle massive concurrent audience peaks.',
+    image:
+      'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1000&q=80',
+    iconName: 'Film',
+    keyChallenges: [
+      'Video playback buffering and stutter during high-traffic media drops',
+      'Ticket scalping and bot abuse during high-demand concert ticket releases',
+      'Cross-device DRM content protection and geographic licensing restrictions',
+    ],
+    solutionsProvided: [
+      'Multi-CDN edge caching with adaptive HLS video streaming pipelines',
+      'Bot-resistant queueing and rate-limited reservation engines for live ticket sales',
+      'Secure tokenized video playback URLs preventing unauthorized stream ripping',
+    ],
+    featuredCapabilities: ['OTT Streaming Apps', 'Ticketing Engines', 'DRM Protection', 'Content Delivery CDN'],
+  },
+  {
+    id: 'rentals',
+    slug: 'rentals',
+    title: 'Rentals & Utilities',
+    shortDescription:
+      'Equipment leasing portals, recurring utility billing, meter telemetry, and automated customer self-service.',
+    fullDescription:
+      'Simplifying lifecycle management for asset rental companies and municipal/private utilities. DIGITEX develops platforms that streamline security deposit handling, recurring billing schedules, meter readings, and maintenance requests.',
+    image:
+      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=80',
+    iconName: 'Key',
+    keyChallenges: [
+      'Managing security deposits, equipment condition inspections, and damage disputes',
+      'Manual reconciliation of recurring monthly utility and rental invoices',
+      'High volume of repetitive billing support calls and manual payment follow-ups',
+    ],
+    solutionsProvided: [
+      'Automated lease management with digital signatures and photo condition logs',
+      'Integrated auto-debit subscription billing (e-NACH, UPI AutoPay, Credit Cards)',
+      'Customer self-service portal for instant payment receipts and service tickets',
+    ],
+    featuredCapabilities: ['Automated Billing', 'Asset Lease Portals', 'Digital Signatures', 'Self-Service Dashboards'],
+  },
+];
+
+export const INITIAL_TESTIMONIALS: TestimonialItem[] = [
+  {
+    id: 'test-1',
+    name: 'Rajesh Malhotra',
+    role: 'Chief Technology Officer',
+    company: 'Apex Global Logistics',
+    service: 'Custom Software & Mobile App',
+    content:
+      'DIGITEX delivered what three previous development agencies failed to execute. Their architectural discipline, transparent sprints, and deep understanding of real-time GPS telemetry transformed our fleet operations.',
+    rating: 5,
+  },
+  {
+    id: 'test-2',
+    name: 'Sarah Jenkins',
+    role: 'Head of Ecommerce',
+    company: 'Lumina Home & Living',
+    service: 'Headless Ecommerce Solutions',
+    content:
+      'The speed increase was dramatic. Moving to DIGITEX’s headless architecture dropped our mobile load time from over 5 seconds to under 0.8 seconds. Our checkout conversion rate jumped 44% immediately.',
+    rating: 5,
+  },
+  {
+    id: 'test-3',
+    name: 'Dr. Arun Singhania',
+    role: 'Director of Clinical Operations',
+    company: 'PulseHealth Medical Network',
+    service: 'Healthcare Platform Engineering',
+    content:
+      'Patient privacy and clinical uptime are non-negotiable for our clinics. DIGITEX built our telehealth consultation portal with impeccable security standards and intuitive UX that our physicians embraced from day one.',
+    rating: 5,
+  },
+  {
+    id: 'test-4',
+    name: 'Vikramaditya Mehta',
+    role: 'Founder & Managing Partner',
+    company: 'UrbanNest Property Ventures',
+    service: 'Web Development & Marketing',
+    content:
+      'From the custom spatial map exploration to the instant WhatsApp lead routing, DIGITEX engineered a platform that directly generated measurable lease agreements. True technology partners.',
+    rating: 5,
+  },
+  {
+    id: 'test-5',
+    name: 'Elena Rostova',
+    role: 'VP of Product Engineering',
+    company: 'FinEdge Capital Markets',
+    service: 'AI & Real-Time Analytics',
+    content:
+      'The engineering quality delivered by DIGITEX is on par with top global engineering studios. They handled high-frequency WebSockets and custom canvas rendering with zero lag. Highly recommended.',
+    rating: 5,
+  },
+  {
+    id: 'test-6',
+    name: 'Pooja Nair',
+    role: 'Head of Growth Marketing',
+    company: 'OmniStore Retail Systems',
+    service: 'Digital Marketing & Growth',
+    content:
+      'Unlike standard agencies that report vanity impressions, DIGITEX optimized our entire paid funnel down to bottom-line ROAS. Their data-driven approach cut our customer acquisition cost by 38%.',
+    rating: 5,
+  },
+];
+
+export const INITIAL_TEAM: TeamMember[] = [
+  {
+    id: 'lead-architect',
+    name: 'Aman Sharma',
+    role: 'Principal Solutions Architect',
+    bio: 'Over 12 years directing enterprise distributed systems, high-concurrency cloud infrastructure, and mission-critical software engineering.',
+    image:
+      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
+    expertise: ['System Architecture', 'Cloud Infrastructure', 'Go / Node.js', 'High Concurrency'],
+  },
+  {
+    id: 'eng-lead',
+    name: 'Devika Krishnan',
+    role: 'Head of Web & Mobile Engineering',
+    bio: 'Specializing in reactive component architecture, sub-second web performance, and native-feeling cross-platform mobile apps.',
+    image:
+      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80',
+    expertise: ['React / Next.js', 'React Native', 'TypeScript', 'State Machines'],
+  },
+  {
+    id: 'uiux-principal',
+    name: 'Rohan Mehra',
+    role: 'Principal Product Designer',
+    bio: 'Passionate about mathematical design systems, cognitive ergonomics, and crafting enterprise software interfaces that eliminate cognitive load.',
+    image:
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
+    expertise: ['Design Systems', 'WCAG AA Accessibility', 'User Research', 'Figma Prototyping'],
+  },
+  {
+    id: 'growth-director',
+    name: 'Simran Kaur',
+    role: 'Director of Performance & Growth',
+    bio: 'Engineering high-converting paid and organic growth funnels with analytical rigor and transparent attribution modeling.',
+    image:
+      'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80',
+    expertise: ['Performance Marketing', 'Technical SEO', 'GA4 & Attribution', 'Conversion Optimization'],
+  },
+];
+
+export const TECH_CATEGORIES: TechCategory[] = [
+  {
+    category: 'Development & Frameworks',
+    description: 'Modern, strongly typed languages and component architectures for high reliability.',
+    items: [
+      { name: 'TypeScript', level: 'Core Standard', description: 'Zero-runtime-error type safety across client and server applications.' },
+      { name: 'React & Next.js', level: 'Production Standard', description: 'Server-side rendering, streaming SSR, and high-performance component state.' },
+      { name: 'Node.js & Go', level: 'Backend Microservices', description: 'Low-latency async I/O and compiled concurrency for enterprise workloads.' },
+      { name: 'Python & FastAPI', level: 'Data & AI Services', description: 'High-speed asynchronous endpoints for machine learning inference.' },
+    ],
+  },
+  {
+    category: 'Cloud & Infrastructure',
+    description: 'Automated containerization, zero-downtime CI/CD, and global edge distribution.',
+    items: [
+      { name: 'Amazon Web Services (AWS)', level: 'Cloud Platform', description: 'ECS, Lambda, S3, RDS, CloudFront, and VPC security isolation.' },
+      { name: 'Google Cloud Platform (GCP)', level: 'Cloud Platform', description: 'Cloud Run, BigQuery, Vertex AI, and Kubernetes Engine.' },
+      { name: 'Docker & Kubernetes', level: 'Container Orchestration', description: 'Repeatable builds, auto-scaling pods, and isolated staging environments.' },
+      { name: 'Cloudflare Edge & WAF', level: 'Security & CDN', description: 'DDoS mitigation, edge caching, and automated SSL termination.' },
+    ],
+  },
+  {
+    category: 'AI & Data Engineering',
+    description: 'Retrieval Augmented Generation, vector indexing, and real-time analytical warehouses.',
+    items: [
+      { name: 'Gemini Models & LLMs', level: 'Foundation Models', description: 'Enterprise reasoning, multimodal analysis, and fine-tuned domain models.' },
+      { name: 'Pinecone & Qdrant', level: 'Vector Databases', description: 'High-dimensional semantic search and similarity retrieval for enterprise data.' },
+      { name: 'PostgreSQL & ClickHouse', level: 'Relational & Time-Series', description: 'ACID transactional integrity and sub-second analytics over billions of rows.' },
+      { name: 'Redis Cache', level: 'In-Memory Store', description: 'Sub-millisecond session caching, pub/sub queues, and rate limiting.' },
+    ],
+  },
+  {
+    category: 'Mobile & Quality Engineering',
+    description: 'Native-grade mobile execution and automated quality verification pipelines.',
+    items: [
+      { name: 'React Native & Flutter', level: 'Cross-Platform Mobile', description: 'Single-codebase iOS and Android apps with 60fps native execution.' },
+      { name: 'Playwright & Cypress', level: 'Automated E2E Testing', description: 'Headless browser automation preventing regression across checkout flows.' },
+      { name: 'k6 Performance Testing', level: 'Load Simulation', description: 'Simulating 20,000+ concurrent users to identify API bottlenecks before launch.' },
+      { name: 'OWASP Security Scans', level: 'Vulnerability Audits', description: 'Automated dependency checking and penetration vulnerability testing.' },
+    ],
+  },
+];
+
+export const INITIAL_FAQS: FAQItem[] = [
+  {
+    id: 'faq-1',
+    category: 'Engagement & Process',
+    question: 'How does DIGITEX begin a new technology engagement?',
+    answer:
+      'We start with a structured Technical Discovery session. We analyze your business requirements, existing technical debt, target user personas, and milestone timelines. Within 48 to 72 hours, we provide a concrete Architectural Proposal with fixed or sprint-based cost estimates.',
+  },
+  {
+    id: 'faq-2',
+    category: 'IP & Ownership',
+    question: 'Do we own the intellectual property and source code?',
+    answer:
+      'Yes, 100%. Upon project milestone settlement, all intellectual property, source repositories, documentation, and database schemas belong entirely to your company. We do not hold client code hostage or impose recurring proprietary license fees.',
+  },
+  {
+    id: 'faq-3',
+    category: 'Support & SLAs',
+    question: 'What happens after our software or website goes live?',
+    answer:
+      'We offer comprehensive Service Level Agreement (SLA) maintenance tiers. These include 24/7 uptime monitoring, security patches, regular dependency updates, cloud cost optimization, and on-demand feature enhancement sprints.',
+  },
+  {
+    id: 'faq-4',
+    category: 'Hiring & Retainers',
+    question: 'Can we hire dedicated engineers from DIGITEX for our existing team?',
+    answer:
+      'Yes. Through our Dedicated Hiring service, you can onboard pre-vetted senior software engineers, mobile developers, or UI/UX designers on flexible monthly retainers. They integrate directly into your Jira, Slack, and sprint ceremonies.',
+  },
+  {
+    id: 'faq-5',
+    category: 'Consultation & Meetings',
+    question: 'How do I request an architectural consultation or project discussion?',
+    answer:
+      'You can submit your requirements through our Get a Quote page or message our solutions team directly on WhatsApp at +91 9034242154.',
+  },
+];
+
+export const INITIAL_ABOUT: AboutConfig = {
+  heroEyebrow: 'ABOUT DIGITEX',
+  heading: 'We are a modern digital agency engineering measurable growth.',
+  subheading: 'Craftsmanship, code ownership, and real business results.',
+  introduction:
+    'DIGITEX brings together creative strategy, user experience design, and robust full-stack software development to build enduring competitive advantage for our clients.',
+  philosophyEyebrow: 'OUR CORE PHILOSOPHY',
+  philosophyHeading: 'Craftsmanship, code ownership, and real business results.',
+  mission:
+    'We believe that software should be an enduring competitive asset, not a temporary subscription or a fragile template. Every web platform, mobile application, and digital marketing system we build is designed for high concurrency, clean architecture, and 100% intellectual property transfer to our clients.',
+  heroImage:
+    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80',
+  values: [
+    {
+      title: 'Outcome-Driven',
+      description: 'We measure our success by your conversion rates, load speeds, and bottom-line revenue impact.',
+    },
+    {
+      title: 'Modern Architecture',
+      description: 'Next.js, TypeScript, cloud-native deployments, and headless stacks for frictionless scaling.',
+    },
+    {
+      title: 'Security & Integrity',
+      description: 'Strict data privacy, automated security scanning, and high-availability SLA compliance.',
+    },
+    {
+      title: 'Rapid Delivery',
+      description: 'Agile iterations and automated deployment pipelines to bring your product to market faster.',
+    },
+  ],
+  process: [
+    {
+      step: 1,
+      title: 'Discovery & Architecture',
+      description:
+        'Analyzing operational workflows, user journeys, and technical constraints to establish a clear architectural plan.',
+    },
+    {
+      step: 2,
+      title: 'Interactive Design & Prototyping',
+      description:
+        'Crafting high-fidelity interactive Figma prototypes adhering to modern spacing and design systems.',
+    },
+    {
+      step: 3,
+      title: 'Sprint Engineering & QA',
+      description:
+        'Bi-weekly sprint releases with continuous unit tests, automated linting, and accessibility reviews.',
+    },
+    {
+      step: 4,
+      title: 'Production Deployment & SLA',
+      description:
+        'Zero-downtime containerized releases, automated monitoring alerts, and ongoing enterprise support.',
+    },
+  ],
+};
+
+export const INITIAL_BLOGS: BlogPost[] = [
+  {
+    id: 'blog-nextjs-vs-react-enterprise',
+    slug: 'nextjs-vs-react-enterprise-web-platforms',
+    title: 'Next.js vs React: Architectural Decisions for High-Performance Enterprise Web Platforms',
+    category: 'Web Engineering',
+    excerpt: 'A technical evaluation of Server Components, Streaming SSR, and Static Site Generation when scaling enterprise web platforms for Core Web Vitals and organic discoverability.',
+    content: `## The Modern Frontend Dilemma
+
+When engineering enterprise digital products, choosing between a pure single-page React architecture and an integrated framework like Next.js is not simply a matter of syntax. It defines your infrastructure footprint, initial load latency, Core Web Vitals performance, and long-term search engine visibility.
+
+At DIGITEX, our engineering teams build platforms handling tens of thousands of daily interactions. Here is how we evaluate these architectural decisions across production workloads.
+
+### 1. Server-Side Rendering (SSR) vs. Client Hydration
+
+Traditional single-page React applications download an initial bare-bones HTML shell and rely on client-side JavaScript execution to fetch data and construct the DOM. While acceptable for authenticated internal SaaS portals, this approach introduces severe drawbacks for public-facing corporate and e-commerce websites:
+
+* **Time to First Contentful Paint (FCP):** Mobile visitors on constrained cellular networks endure noticeable white-screen flashes while JavaScript bundles download and parse.
+* **Crawl Budget and SEO Vulnerability:** While Googlebot renders JavaScript, deferred client rendering consumes significantly more crawl budget, delaying indexing of frequently updated catalog pages and new service offerings.
+* **Core Web Vitals Penalty:** Cumulative Layout Shift (CLS) and Interaction to Next Paint (INP) suffer when large components mount asynchronously on the client.
+
+### 2. Next.js 15 and React Server Components (RSC)
+
+Next.js fundamentally transforms this dynamic through React Server Components. With RSC:
+
+* Server components execute exclusively on the server, streaming pre-rendered HTML down to the browser without shipping their npm dependencies to the client bundle.
+* Database connections and internal API microservices are queried directly at request time without exposing sensitive API endpoints or authentication tokens to browser inspect panels.
+* Sensitive business logic and calculation algorithms remain secure within backend container boundaries.
+
+\`\`\`typescript
+// Server Component Example in Next.js App Router
+import { db } from '@/lib/db';
+
+export default async function ProductOverviewPage({ params }: { params: { slug: string } }) {
+  // Direct server query without public API exposure
+  const product = await db.products.findUnique({
+    where: { slug: params.slug },
+  });
+
+  return (
+    <article className="prose lg:prose-xl">
+      <h1>{product.title}</h1>
+      <p>{product.description}</p>
+    </article>
+  );
+}
+\`\`\`
+
+### 3. When to Choose Pure React (Vite SPA)
+
+Despite the clear benefits of Next.js for content and commerce, a lightweight Vite React SPA remains the superior choice in specific operational contexts:
+
+1. **Authenticated Dashboards and Owner Portals:** Where public search engine indexing is irrelevant and immediate optimistic UI updates dominate user experience.
+2. **Offline-First Progressive Web Apps (PWA):** Where service workers cache client bundles locally for continuous field operations.
+3. **Decoupled Micro-Frontends:** Embedded inside existing enterprise enterprise resource planning (ERP) systems.
+
+### Key Architectural Takeaways
+
+| Dimension | Vite + React SPA | Next.js (App Router) |
+| :--- | :--- | :--- |
+| **Primary Rendering** | Client-Side Hydration | Hybrid (Server Components + Client Leaves) |
+| **SEO & Indexing** | Requires Pre-Rendering / Edge Proxies | Native Streaming SSR & Static Generation |
+| **Initial Bundle Size** | Scales with App Dependencies | Minimized via Server-Only Execution |
+| **Deployment Model** | Static S3 / CDN Bucket | Node.js Container / Edge Runtime |
+
+For customer-facing brands requiring organic search dominance and instantaneous first load speeds, an enterprise Next.js architecture consistently delivers superior ROI.`,
+    author: {
+      name: 'Aarav Mehta',
+      role: 'Principal Solutions Architect',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+    },
+    coverImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    readTime: '6 min read',
+    publishedAt: '2026-03-24',
+    status: 'published',
+    featured: true,
+    tags: ['Next.js', 'React', 'Performance', 'Web Development', 'Architecture'],
+    seoTitle: 'Next.js vs React for Enterprise Web Platforms | DIGITEX Insights',
+    seoDescription: 'A technical evaluation of Server Components, Streaming SSR, and Static Site Generation when scaling enterprise web platforms for Core Web Vitals.',
+  },
+  {
+    id: 'blog-production-ai-solutions-llm',
+    slug: 'production-ai-solutions-llm-architecture',
+    title: 'Engineering Production AI Solutions: From Prototype LLMs to Multi-Tenant Retrieval Systems',
+    category: 'AI & Machine Learning',
+    excerpt: 'Moving beyond basic API wrappers: How to architect scalable RAG pipelines, manage vector embeddings with Qdrant and Pinecone, and optimize LLM token latency in enterprise applications.',
+    content: `## The Gap Between AI Demos and Production Systems
+
+Building a prototype using a foundation model API takes an afternoon. Engineering a resilient, compliant, and cost-predictable enterprise AI solution takes months of rigorous systems architecture.
+
+When enterprise clients partner with DIGITEX for AI integration, their primary obstacles are rarely model intelligence. Instead, they grapple with hallucination governance, vector search latency, data privacy compliance, and runaway token bills.
+
+### 1. Multi-Tenant Retrieval-Augmented Generation (RAG)
+
+Standard RAG architectures frequently falter when scaled across multi-tier enterprise organizations where different user roles have varying document access permissions.
+
+To prevent critical data leakage:
+* **Pre-Filtering at the Vector Layer:** We enforce metadata filtering directly inside high-dimensional vector databases (such as Qdrant and Pinecone) prior to similarity computation.
+* **Hybrid Search Strategy:** Vector cosine similarity excels at conceptual comprehension, but keyword BM25 retrieval is critical for exact SKU codes, invoice numbers, and legal citations. Combining both yields over 94% retrieval accuracy.
+
+### 2. Semantic Caching for Latency and Cost Governance
+
+Repeated enterprise queries often share identical semantic intent. Directly passing these to large frontier models (such as Gemini 1.5 Pro) wastes computational budget and introduces 2–4 second response latencies.
+
+By deploying semantic caching layers backed by sub-millisecond Redis vector indices:
+* Inquiries with semantic similarity > 0.95 resolve in under 40 milliseconds.
+* Enterprise LLM inference expenses are reduced by up to 60%.
+* System uptime remains resilient even during upstream provider rate limits.
+
+### 3. Evaluating Accuracy with Automated LLM-as-a-Judge Pipelines
+
+Production quality cannot rely on subjective human spot-checks. We construct automated synthetic evaluation suites assessing:
+1. **Faithfulness:** Does the generated output contain assertions unsupported by retrieved context?
+2. **Answer Relevance:** Does the synthesis directly solve the user's operational query without fluff?
+3. **Harm Minimization:** Automated filtering against prompt injection and jailbreak payloads.
+
+### Summary Checklist for Production AI
+
+* Segment organizational knowledge into clean, chunked embeddings with deterministic chunk overlap.
+* Implement role-based access control (RBAC) at the retrieval query stage.
+* Monitor token ingestion, inference latency, and hallucination rates with centralized telemetry.`,
+    author: {
+      name: 'Vikram Sengupta',
+      role: 'Head of AI Engineering',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+    },
+    coverImage: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80',
+    readTime: '8 min read',
+    publishedAt: '2026-03-12',
+    status: 'published',
+    featured: false,
+    tags: ['AI Solutions', 'LLMs', 'Gemini AI', 'Vector Search', 'Machine Learning'],
+    seoTitle: 'Engineering Production AI Solutions & RAG Pipelines | DIGITEX',
+    seoDescription: 'How to architect scalable enterprise RAG pipelines, manage vector embeddings, and govern token latency and compliance.',
+  },
+  {
+    id: 'blog-scaling-headless-ecommerce-shopify',
+    slug: 'scaling-headless-ecommerce-shopify-plus',
+    title: 'Scaling Headless E-Commerce: Core Web Vitals, Checkout Latency, and Shopify Plus',
+    category: 'E-Commerce',
+    excerpt: 'How decoupled storefront architectures eliminate Shopify liquid limitations, reduce mobile checkout drop-off, and increase revenue velocity for omni-channel retailers.',
+    content: `## The Modern Commerce Velocity Imperative
+
+For high-volume retail brands, every 100 milliseconds of latency during product browsing and cart drawer interactions directly depresses conversion rates. Traditional monolithic templates (like standard Liquid themes) struggle when burdened by dozens of third-party tracking scripts, review widgets, and personalization plugins.
+
+Decoupled headless commerce solves this bottleneck by separating the customer-facing frontend from Shopify's battle-tested checkout and inventory engine.
+
+### 1. Eliminating Frontend Monolithic Bloat
+
+In a headless architecture powered by Next.js and Shopify Storefront API:
+* The customer browses a blazing-fast edge-cached application.
+* Product pages render instantly with zero layout shifts, achieving perfect 100/100 Core Web Vitals.
+* Complex product configurators, 3D AR previews, and customized bundling workflows execute seamlessly without theme app conflict.
+
+### 2. Global Edge Deployment & Stale-While-Revalidate
+
+By utilizing Incremental Static Regeneration (ISR):
+* Catalog pages are cached across worldwide CDN edge nodes.
+* When inventory or pricing updates in Shopify Admin, webhooks trigger instantaneous cache revalidation within seconds.
+* Shoppers receive static-speed responses with dynamic real-time inventory precision.
+
+### 3. Frictionless Checkout Hand-Off
+
+Checkout remains the most critical moment of truth. Headless architectures maintain complete security by seamlessly redirecting authenticated customer carts directly to Shopify's PCI DSS Level 1 certified checkout environment, ensuring complete compliance and frictionless payment orchestration via Stripe, Apple Pay, and Google Pay.`,
+    author: {
+      name: 'Priya Sharma',
+      role: 'Lead Commerce Architect',
+      avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
+    },
+    coverImage: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80',
+    readTime: '7 min read',
+    publishedAt: '2026-02-28',
+    status: 'published',
+    featured: false,
+    tags: ['E-Commerce', 'Shopify Plus', 'Headless Commerce', 'Stripe', 'Conversion Rate'],
+    seoTitle: 'Scaling Headless E-Commerce on Shopify Plus | DIGITEX Insights',
+    seoDescription: 'How decoupled headless storefronts achieve perfect Core Web Vitals, eliminate mobile latency, and boost checkout conversions.',
+  },
+  {
+    id: 'blog-technical-seo-core-web-vitals',
+    slug: 'technical-seo-core-web-vitals-guide',
+    title: 'Technical SEO in 2026: Solving Client-Side Hydration & Crawl Budget Bottlenecks',
+    category: 'SEO & Growth',
+    excerpt: 'An engineer’s playbook for dominating Google search: Eliminating cumulative layout shift, rendering critical CSS inline, and structuring JSON-LD schema for rich search snippets.',
+    content: `## Search Optimization is an Engineering Discipline
+
+Modern search engine optimization has evolved far beyond basic keyword density and backlink outreach. Today's search algorithms heavily penalize slow rendering, layout jitter, and poorly structured crawl paths.
+
+To achieve sustainable organic market dominance, engineering teams must treat SEO as a primary non-functional software requirement.
+
+### 1. Mastering the New Core Web Vitals: Interaction to Next Paint (INP)
+
+In 2024, Google formally replaced First Input Delay (FID) with **Interaction to Next Paint (INP)**. INP measures user input responsiveness across the entire session duration, not merely the first click.
+
+Common enterprise culprits that degrade INP include:
+* Long-running JavaScript execution blocks on the main browser thread.
+* Expensive DOM recalculations triggered during dropdown filters and modal opens.
+* Heavy analytics tracking scripts competing for CPU processing time.
+
+### 2. Canonical Architecture & Clean URL Hierarchy
+
+Search engines must never guess which page represents the authoritative source. Every public URL must enforce:
+* A strictly defined canonical tag pointing to the official production domain with clean trailing-slash parity.
+* Strict HTTP-to-HTTPS redirect rules.
+* Prevention of duplicate parameter indexing from faceted search filters.
+
+### 3. Structured Data Schema (JSON-LD)
+
+Embedding rich Schema.org structured data directly inside server-rendered HTML unlocks rich Google search features:
+* **Organization & Brand Schema:** Establishes official identity, logo vectors, and verified social channels.
+* **BlogPosting / Article Schema:** Enhances visibility in Google Discover and knowledge graph panels.
+* **FAQPage Schema:** Displays expandable question snippets directly on the primary SERP.`,
+    author: {
+      name: 'Rohan Deshmukh',
+      role: 'Head of Growth Engineering',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+    },
+    coverImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+    readTime: '5 min read',
+    publishedAt: '2026-02-15',
+    status: 'published',
+    featured: false,
+    tags: ['SEO', 'Core Web Vitals', 'Digital Marketing', 'Google Search', 'Technical SEO'],
+    seoTitle: 'Technical SEO & Core Web Vitals Playbook 2026 | DIGITEX',
+    seoDescription: 'An engineer’s playbook for search dominance: Eliminating CLS, optimizing INP, and structuring schema for maximum search discoverability.',
+  },
+  {
+    id: 'blog-mobile-app-architecture-flutter-vs-react-native',
+    slug: 'mobile-app-architecture-flutter-vs-react-native',
+    title: 'Cross-Platform Mobile Architecture: Benchmarking Flutter vs React Native for Scalable Apps',
+    category: 'Mobile Engineering',
+    excerpt: 'A pragmatic comparison of execution engines, bridge-less architecture in React Native (Fabric/TurboModules), and Flutter’s Impeller rendering engine for modern enterprises.',
+    content: `## The Modern Cross-Platform Reality
+
+The age-old debate between native Swift/Kotlin and cross-platform frameworks has largely tilted in favor of cross-platform solutions for 90% of business applications. However, choosing between **Flutter** and **React Native** requires evaluating rendering pipelines and talent ecosystems.
+
+### 1. Rendering Architecture: Skia/Impeller vs. Native OEM Components
+
+The core architectural divergence between both technologies lies in how pixels are drawn:
+
+* **Flutter:** Bypasses native platform widgets entirely. Flutter compiles Dart ahead-of-time (AOT) and draws every UI element directly onto a Skia/Impeller canvas. This guarantees pixel-perfect consistency across iOS and Android versions.
+* **React Native:** Leverages the New Architecture (Fabric renderer and TurboModules) to invoke actual native UIKit and Android View hierarchies directly via JSI (JavaScript Interface), eliminating the legacy asynchronous JSON bridge.
+
+### 2. Ecosystem & Talent Synergy
+
+* If your engineering organization already maintains a strong TypeScript and web frontend codebase, React Native allows up to 70% business logic sharing between web and mobile repositories.
+* For applications demanding custom 60 FPS graphics, fluid animations, or offline hardware telemetry, Flutter's unified rendering engine offers unmatched frame rate stability.
+
+### The Decision Matrix
+
+Choose **Flutter** if your product requires bespoke UI controls that must look strictly identical on every screen. Choose **React Native** if seamless integration with web TypeScript libraries and native platform widgets is your organization's highest velocity priority.`,
+    author: {
+      name: 'Aarav Mehta',
+      role: 'Principal Solutions Architect',
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+    },
+    coverImage: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80',
+    readTime: '6 min read',
+    publishedAt: '2026-01-30',
+    status: 'published',
+    featured: false,
+    tags: ['Mobile Apps', 'Flutter', 'React Native', 'iOS', 'Android'],
+    seoTitle: 'Flutter vs React Native Architecture Benchmark | DIGITEX',
+    seoDescription: 'A pragmatic comparison of execution engines, rendering pipelines, and cross-platform mobile architectures.',
+  },
+  {
+    id: 'blog-enterprise-cloud-architecture-docker-postgres',
+    slug: 'enterprise-cloud-architecture-docker-postgresql-redis',
+    title: 'Enterprise Cloud Architecture: Transitioning Monoliths to Zero-Downtime Microservices with Docker and PostgreSQL',
+    category: 'Cloud Infrastructure',
+    excerpt: 'How modern engineering squads decompose legacy monolithic codebases into containerized microservices, automate PostgreSQL read replicas, and achieve 99.99% service availability.',
+    content: `## The Modern Enterprise Cloud Challenge
+
+As digital applications scale beyond initial growth milestones, monolithic architectures frequently become operational bottlenecks. Synchronous database locks, elongated deployment cycles, and single-point-of-failure vulnerabilities stall feature velocity and inflate cloud hosting costs.
+
+At DIGITEX, our cloud infrastructure architects partner with enterprises to decouple legacy monolithic systems into resilient, containerized microservices that guarantee 99.99% service level agreements (SLAs).
+
+### 1. The Strangler Fig Decoupling Pattern
+
+Attempting a "big bang" architectural rewrite is the single most common cause of enterprise engineering failure. Instead, we execute the **Strangler Fig pattern**:
+
+* **Edge Gateway Routing:** An intelligent reverse proxy (such as Cloudflare or AWS ALB) sits in front of the application, routing specific API sub-domains to new microservices while legacy routes remain intact.
+* **Domain-Driven Context Boundaries:** We identify cohesive business domains (such as Authentication, Billing, and Notification streams) and extract them into autonomous containerized services.
+* **Dual-Write Verification:** During data migration sprints, writes are mirrored asynchronously to both legacy and modern schemas to verify zero data loss.
+
+### 2. High-Availability PostgreSQL & Caching Topologies
+
+Data architecture is the bedrock of system resilience:
+
+* **Primary-Replica Topology:** Heavy analytical read traffic and catalog searches are offloaded to geographically distributed PostgreSQL read replicas, protecting the primary writer instance from CPU saturation.
+* **Redis Connection Pools:** Hot session tokens and frequently queried metadata reside in an in-memory Redis cluster with sub-millisecond retrieval latency.
+* **Automated Point-in-Time Recovery (PITR):** Transactional write-ahead logs (WAL) are streamed continuously to immutable cloud storage, enabling sub-minute disaster recovery.
+
+### 3. Containerization and Zero-Downtime Deployments
+
+By standardizing services into Docker containers orchestrated via automated CI/CD pipelines:
+
+* **Rolling & Blue-Green Deployments:** New software versions are initialized, passed through automated health probes, and traffic shifted gradually with zero user disruption.
+* **Horizontal Pod Autoscaling:** Container clusters scale dynamically based on real-time request queue depths and memory utilization thresholds.
+
+\`\`\`yaml
+# Production Health Check & Graceful Termination Specification
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: digitex-core-api
+spec:
+  replicas: 4
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+\`\`\`
+
+### Summary & Architectural Blueprint
+
+* Standardize container baselines across all development, staging, and production environments.
+* Decouple database reading workloads from critical transaction writes.
+* Automate continuous integration with end-to-end telemetry and error budgeting.`,
+    author: {
+      name: 'Vikram Sengupta',
+      role: 'Head of AI & Cloud Engineering',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+    },
+    coverImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80',
+    readTime: '7 min read',
+    publishedAt: '2026-02-14',
+    status: 'published',
+    featured: false,
+    tags: ['Cloud', 'Docker', 'PostgreSQL', 'Microservices', 'DevOps'],
+    seoTitle: 'Enterprise Cloud Architecture & Zero-Downtime Deployments | DIGITEX',
+    seoDescription: 'How to decompose monolithic codebases into containerized microservices, manage PostgreSQL read replicas, and achieve 99.99% cloud availability.',
+  },
+];
+
